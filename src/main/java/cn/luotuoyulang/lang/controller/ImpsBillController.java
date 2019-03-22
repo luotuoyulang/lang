@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -28,11 +29,11 @@ public class ImpsBillController {
     private IImpsBillService impsBillService;
 
     @RequestMapping(value = "/a",method = RequestMethod.GET)
-    public IPage<ImpsBill> a(){
+    public String a(String va){
         try {
             IPage<ImpsBill> page = impsBillService.page(new Page<>(0, 3));
             String sa = StringEscapeUtils.escapeHtml("<a>dddd</a>");
-            return page;
+            return va;
                     
         } catch (Exception e) {
             e.printStackTrace();
