@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 
-@WebFilter(filterName="xssFilter",urlPatterns="/imps-bill/a")
+@WebFilter(filterName="xssFilter",urlPatterns="/*")
 public class XssFilter implements Filter {
 
     @Override
